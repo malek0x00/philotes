@@ -1,0 +1,651 @@
+{
+
+     "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Yet Another Node.js Blogg Application API",
+      "description": "Yet Another Node.js Blogg Application API",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:3000",
+    "basePath": "",
+    "tags": [
+      {
+        "name": "Users",
+        "description": "API for users in the system"
+      },
+      {
+        "name": "Produit",
+        "description": "API for products in the system"
+      },
+      {
+        "name": "factures",
+        "description": "API for factures in the system"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/users": {
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "description": "Create new user in system",
+          "parameters": [
+            {
+              "name": "user",
+              "in": "body",
+              "description": "User that we want to create",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New user is created",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        },
+        "get": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "Get all users in system",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Users"
+              }
+            }
+          }
+        }
+      },
+      "/users/getone/{id}": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of user that we want to find",
+            "type": "string"
+          }
+        
+      
+        ],
+        "get": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "Get user with given ID",
+          "responses": {
+            "200": {
+              "description": "User is found",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        }
+      
+       
+      },
+      "/users/deleteone/{id}": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of user that we want to find",
+            "type": "string"
+          }
+         
+         
+          
+      
+        ],
+       
+        "delete": {
+          "summary": "Delete user with given ID",
+          "tags": ["Users" ]
+          ,
+          "responses": {
+            "200": {
+              "description": "User is deleted",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        }
+       
+      },
+      "/users/up/{id}": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of user that we want to find",
+            "type": "string"
+          }
+         
+         
+          
+      
+        ],
+       
+        "put": {
+          "summary": "Update user with give ID",
+          "tags": [
+            "Users"
+          ],
+          "parameters": [
+            {
+              "name": "user",
+              "in": "body",
+              "description": "User with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "User is updated",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        }
+      },
+      "/users/ithen":{
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "description": "login",
+          "parameters": [
+            {
+              "name": "user",
+              "in": "body",
+              "description": "authentification",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "success",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        }
+      },
+      "/users/logout":{
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "description": "logout",
+          "parameters": [
+            {
+              "name": "user",
+              "in": "body",
+              "description": "logout",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "success",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        }
+      },
+      "/users/send":{
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "description": "send",
+          "parameters": [
+            {
+              "name": "user",
+              "in": "body",
+              "description": "send",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "success",
+              "schema": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        }
+      },
+
+      "/produit": {
+        "post": {
+          "tags": [
+            "Produit"
+          ],
+          "description": "Create new product in system",
+          "parameters": [
+            {
+              "name": "produit",
+              "in": "body",
+              "description": "product that we want to create",
+              "schema": {
+                "$ref": "#/definitions/Produit"
+              }
+            }
+          ],
+          "products": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New product is created",
+              "schema": {
+                "$ref": "#/definitions/Produit"
+              }
+            }
+          }
+        },
+        "get": {
+          "tags": [
+            "Produit"
+          ],
+          "summary": "Get all products in system",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/Produit"
+              }
+            }
+          }
+        }
+      },
+      "/produit/getid/{id}": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of product that we want to find",
+            "type": "string"
+          }
+        
+      
+        ],
+        "get": {
+          "tags": [
+            "Produit"
+          ],
+          "summary": "Get produit with given ID",
+          "responses": {
+            "200": {
+              "description": "product is found",
+              "schema": {
+                "$ref": "#/definitions/Produit"
+              }
+            }
+          }
+        }
+      
+       
+      },
+      "/produit/del/{id}": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of Product that we want to find",
+            "type": "string"
+          }
+         
+         
+          
+      
+        ],
+       
+        "delete": {
+          "summary": "Delete product with given ID",
+          "tags": [
+            "Produit"
+          ],
+          "responses": {
+            "200": {
+              "description": "product is deleted",
+              "schema": {
+                "$ref": "#/definitions/Produit"
+              }
+            }
+          }
+        }
+       
+      },
+      "/produit/upp/{id}": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of product that we want to find",
+            "type": "string"
+          }
+         
+         
+          
+      
+        ],
+       
+        "put": {
+          "summary": "Update product with give ID",
+          "tags": [
+            "Produit"
+          ],
+          "parameters": [
+            {
+              "name": "produit",
+              "in": "body",
+              "description": "product with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/Produit"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "product is updated",
+              "schema": {
+                "$ref": "#/definitions/Produit"
+              }
+            }
+          }
+        }
+      },
+      "/vendeur": {
+        "post": {
+          "tags": [
+            "vendeur"
+          ],
+          "description": "add new Vendeur in system",
+          "parameters": [
+            {
+              "name": "vendeur",
+              "in": "body",
+              "description": "vendeur that we want to create",
+              "schema": {
+                "$ref": "#/definitions/vendeur"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New vendeur is created",
+              "schema": {
+                "$ref": "#/definitions/vendeur"
+              }
+            }
+          }
+        },
+        "get": {
+          "tags": [
+            "vendeur"
+          ],
+          "summary": "Get all vendeur in system",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/vendeur"
+              }
+            }
+          }
+        }
+      },
+      "/vendeur/getUserById/{id}": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of vendeur that we want to find",
+            "type": "string"
+          }
+        
+      
+        ],
+        "get": {
+          "tags": [
+            "vendeur"
+          ],
+          "summary": "Get vendeur with given ID",
+          "responses": {
+            "200": {
+              "description": "vendeur is found",
+              "schema": {
+                "$ref": "#/definitions/vendeur"
+              }
+            }
+          }
+        }
+      
+       
+      },
+      "/vendeur/deleteOneUser/{id}": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of vendeur that we want to find",
+            "type": "string"
+          }
+         
+         
+          
+      
+        ],
+       
+        "delete": {
+          "summary": "Delete user with given ID",
+          "tags": ["vendeur" ]
+          ,
+          "responses": {
+            "200": {
+              "description": "vendeur is deleted",
+              "schema": {
+                "$ref": "#/definitions/vendeur"
+              }
+            }
+          }
+        }
+       
+      }
+
+
+    },
+    "definitions": {
+      "User": {
+        "required": [
+          "email",
+          "password"
+        ],
+        "properties": {
+          "password": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "phone": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "email": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "nom": {
+            "type": "string"
+          },
+          "Prenom": {
+            "type": "string"
+          }
+        }
+      },
+      "Users": {
+        "type": "array",
+        "$ref": "#/definitions/User"
+      },
+      "Produit": {
+        "required": [
+          "id",
+          "nom"
+        ],
+        "properties": {
+            "nom": {
+                "type": "string"
+              },
+          "description": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "Prix": {
+            "type": "string",
+            "uniqueItems": true
+          }
+        
+         
+        }
+      },
+      "Produits": {
+        "type": "array",
+        "$ref": "#/definitions/User"
+      },
+      "vendeur": {
+        "required": [
+          "email",
+          "password"
+        ],
+        "properties": {
+          "Cin":{
+            "type": "string",
+            "uniqueItems": true
+          },
+          "password": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "phone": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "email": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "nom": {
+            "type": "string"
+          },
+          "Prenom": {
+            "type": "string"
+          }
+        }
+      },
+      "vendeurs": {
+        "type": "array",
+        "$ref": "#/definitions/vendeur"
+      }
+      
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
