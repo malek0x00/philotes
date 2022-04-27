@@ -15,9 +15,9 @@ npm start
 to start the project
 
 ###some screenshots
-#####homepage:
+**homepage**:
 ![homepage](./screen_caps/homepage.png)
-#####login page:
+**login page**:
 ![login page](./screen_caps/login.png)
-#####user page:
+**user page**:
 ![user page](./screen_caps/userpage.png)
