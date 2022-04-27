@@ -5,10 +5,6 @@ import {useHistory} from 'react-router-dom';
 import "@fontsource/rouge-script";
 import background from "./bck2.png";
 import TextLoop from "react-text-loop";
-import waelpic from "./images/wael.jpeg";
-import malekpic from "./images/malek.jpg";
-import doniapic from "./images/donia.jpg";
-import mahdipic from "./images/mahdi.jpeg";
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 function Home (props) {
@@ -21,10 +17,10 @@ function Home (props) {
         <ParallaxLayer offset={0} speed={2.5}>
         <div>
         <img src={background} alt="background pic" style={{position:'absolute',top:0,right:0,width:700}}></img>
-        <a href="https://www.facebook.com/malek.bougadouha"><Image src={malekpic} width={170} radius={150} style={{position:'absolute',top:78,right:216}}/></a>
-        <a href="https://www.facebook.com/WaelMorgan99"><Image src={waelpic} width={160} radius={300} style={{position:'absolute',top:226,right:358}}/></a>
-        <a href="https://www.facebook.com/profile.php?id=100008216596226"><Image src={doniapic} width={110} radius={150} style={{position:'absolute',top:306,right:127}}/></a>
-        <a href="https://www.facebook.com/profile.php?id=100003421077161"><Image src={mahdipic} width={126} radius={240} style={{position:'absolute',top:396,right:261}}/></a>
+        <a href="https://www.facebook.com/malek.bougadouha"><Image  width={170} radius={150} style={{position:'absolute',top:78,right:216}}/></a>
+        <a href="https://www.facebook.com/WaelMorgan99"><Image  width={160} radius={300} style={{position:'absolute',top:226,right:358}}/></a>
+        <a href="https://www.facebook.com/profile.php?id=100008216596226"><Image  width={110} radius={150} style={{position:'absolute',top:306,right:127}}/></a>
+        <a href="https://www.facebook.com/profile.php?id=100003421077161"><Image  width={126} radius={240} style={{position:'absolute',top:396,right:261}}/></a>
         </div>
         
            

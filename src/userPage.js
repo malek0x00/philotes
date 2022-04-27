@@ -48,7 +48,7 @@ function UserPage (props) {
         rows.push(
         <TinderCard onSwipe={(dir) => swiped(dir, character.first_name)} onCardLeftScreen={() => outOfFrame(character.first_name)}>  
         <div style={{width:'100%', position:'absolute',display:'flex',alignItems:'center',justifyContent: "center",alignContent:"center"}} >
-        <StylishCard style={{}} name={character.first_name} surname={character.last_name} img={character.avatar}></StylishCard>
+        <StylishCard style={{}} name="person" surname="3eme Genie Iinformatique" img="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2lybCUyMGZhY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"></StylishCard>
         </div>
         </TinderCard>
         );
